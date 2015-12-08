@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#Versions of Google's Pagespeed, NAXSI, NGINX. Along with other variables.
+#This is the variables for the build. Make sure to change them before running the script.
 DIRECTORY=/root/webserver
-#DO NOT add / at the end.
-PAGESPEED=1.9.32.6
+#Do NOT add '/', trailing slash in the end.
+PAGESPEED=1.9.32.10
 NGINX=1.8.0
-NAXSI=0.54rc3
+NAXSI=0.54
 COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-release-${PAGESPEED}-beta \
 --add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --without-mail_pop3_module \
@@ -16,15 +16,15 @@ COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-release-${PAGESPEED}-beta \
 --with-http_stub_status_module \
 --with-http_gzip_static_module"
 
-#Ensure dependencies of BUILD-ESSENTIAL ARE PRESENT
-function dependencies ()
+#Ensure dependencies are PRESENT (Debuan / Ubuntu).
+function dependencies_debian ()
 {
-  sudo apt-get update
+	sudo apt-get update
 	sudo apt-get -y install sudo make wget build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev
 }
 
-#Create directory if it is not present, and head to directory install
-function folder-check-create ()
+#Check if directory is present and create if it is not. Next, head to the installation directory.
+function folder_check_create ()
 {
 	if [ ! -d "${DIRECTORY}" ]; then
 	    mkdir -p "${DIRECTORY}"
@@ -33,8 +33,8 @@ function folder-check-create ()
 	cd ${DIRECTORY}
 }
 
-#Preparation of PAGESPEED
-function prepare-pagespeed ()
+#Preapre to build PAGESPEED.
+function prepare_pagespeed ()
 {
 	if [ ! -d ngx_pagespeed-release-${PAGESPEED}-beta ];
 		then
@@ -53,8 +53,8 @@ function prepare-pagespeed ()
 		cd ${DIRECTORY}
 	}
 
-#Preparation of NAXSI
-function prepare-naxsi ()
+#Prepare to build NAXSI.
+function prepare_naxsi ()
 {
 if [ ! -d naxsi-${NAXSI} ];
 	then
@@ -65,8 +65,8 @@ if [ ! -d naxsi-${NAXSI} ];
 	fi;
 }
 
-#Preparation of NGINX
-function prepare-nginx ()
+#Prepare to build NGINX.
+function prepare_nginx ()
 {
 	if [ ! -d nginx-${NGINX} ];
 		then
@@ -77,6 +77,7 @@ function prepare-nginx ()
 		fi;
 }
 
+#Finally, compile and install.
 function compile ()
 {
 	cd ${DIRECTORY}/nginx-${NGINX}
@@ -86,16 +87,18 @@ function compile ()
 }
 
 
-#Execute functions
+#The variables below executes the process. Do not rename them unless you know what you are doing.
 
-dependencies
-#Installs dependencies. Comment it out if you already have proper dependencies.
-folder-check-create
-#Creates install folder specified in DIRECTORY variable and enters the folder.
-prepare-pagespeed
-#Downloads, and unpacks NGX_PAGESPEED module
-prepare-naxsi
-#Downloads, and unpacks NAXSI_SRC module
-prepare-nginx
-#Compiles, and installs NGINX + MODULES with COMPILE
+#Install dependencies. 
+#Comment it out if you already have proper dependencies installed or on another system other than Debian or Ubuntu based system.
+dependencies_debian
+#Create install folder, specified in DIRECTORY variable and enter the folder.
+folder_check_create
+#Download, unpack NGX_PAGESPEED.
+prepare_pagespeed
+#Download, unpack NAXSI_SRC.
+prepare_naxsi
+#Download, unpack NGINX.
+prepare_nginx
+#Compile and install NGINX + MODULES.
 compile
