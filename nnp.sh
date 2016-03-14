@@ -4,7 +4,7 @@
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
 PAGESPEED=1.9.32.10
-NGINX=1.8.0
+NGINX=1.8.1
 NAXSI=0.54
 COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-release-${PAGESPEED}-beta \
 --add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
@@ -89,7 +89,7 @@ function compile ()
 
 #The variables below executes the process. Do not rename them unless you know what you are doing.
 
-#Install dependencies. 
+#Install dependencies.
 #Comment it out if you already have proper dependencies installed or on another system other than Debian or Ubuntu based system.
 dependencies_debian
 #Create install folder, specified in DIRECTORY variable and enter the folder.
