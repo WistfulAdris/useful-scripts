@@ -1,28 +1,15 @@
-# nginx-naxsi-pagespeed
+# Simdol's Useful Scripts
 
-This script is intended to automate installation & compilation of nginx, naxsi, and ngx_pagespeed. In addition, it allows you to update nginx, naxsi, and ngx_pagespeed just by changing the variables' version. Usually, the packages' versions listed on the script are up to date. However, it may be good practice to check to ensure that you get the lastest version installed.
+Instead of performing the tasks day by day, I've decided to program some scripts in bash / shell to lower the workload and spend time more efficiently. Or sometimes, I didn't want to perform same tasks over multiple Linux GNU / nix based systems. These scripts are highly experimental, and I am not responsible for whatever the outcome may be. That said, the scripts uploaded here are tested and used by myself and I only commit to upload the script that works.
 
 # Documentation
 
-Before running the script in bash or shell, ensure to change the variables. In addition, it is great practice to skim through the script before running the script.
+Few things to note in mind:
 
-DIRECTORY=(This is the directory where it will use to download the packages and compile them)
-
-PAGESPEED=(pagespeed version goes here. Obtain one from https://github.com/pagespeed/ngx_pagespeed/releases)
-
-NGINX=(nginx version goes here. Obtain one from http://wiki.nginx.org/Install)
-
-NAXSI=(naxsi version goes here. Obtain one from https://github.com/nbs-system/naxsi/releases)
-COMPILE=(arguments that are used to compile NGINX goes here. Ensure that you modify this to your preference.)
-
-If you want to skip a process, (ex: skip installation of dependencies, or skip installation of naxsi), simply comment out the call of function in the bottom of the script.
-
-To upgrade any packages installed, simply change the versions of variables of the outdated packages in the variables. It will automatically compare the version installed (directory name in the cache), and update the packages into latest version.
-
-To run this script, simply type the following into bash or shell.
-
-chmod +x nnp.sh && bash nnp.sh
+- Be sure to have at least some bash / shell experience before using the script!
+- *Always* read script's README.md as well as the script itself!
+- Be sure to ask or file an issue if you need help or if the script is not working as it is intended to be.
 
 # License
 
-You are free to use this script in accords to your need. I don't take credit of this script, and packages that were used in the script goes to respective owners. (Google, NGINX, NAXSI) If you wish to contribute to this code, please feel free to inform me.
+You are free to use this script in accords to your need. I don't take credit of this script, and packages that were used in the script goes to respective owners. If you wish to contribute to this code, please feel free to inform me.
