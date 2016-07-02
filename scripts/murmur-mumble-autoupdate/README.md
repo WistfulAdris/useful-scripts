@@ -7,9 +7,13 @@ This script is intended to automate installation up upgrade MURMUR, Mumble clien
 Before running the script in bash or shell, ensure to change the variables. In addition, it is great practice to skim through the script before running the script.
 
 TEMP={This is the directory where the compressed murmur is downloaded and unpacked.}
+
 USER={This is the user that is used to run / install murmur. DO NOT LEAVE THIS AS ROOT!}
+
 DIRECTORY={The directory where murmur will actually be installed at. Must be writable by the user running the script. i.e. root}
+
 MUMBLE={Latest version of murmur goes here.}
+
 MUMBLEOLD={Older murmur version: a version you are updating from}
 
 If you want to skip a process, simply comment out the call of function in the bottom of the script.
