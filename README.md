@@ -10,6 +10,11 @@ Few things to note in mind:
 - *Always* read script's README.md as well as the script itself!
 - Be sure to ask or file an issue if you need help or if the script is not working as it is intended to be.
 
+# Current Scripts
+
+- NNP {NGINX NAXI PAGESPED -> Autoupdate + Autoinstall [Compile]}: Automatic compilation + installation of NGINX with NAXSI & PAGESPEED module with easy updating support.
+- mumble {MURMUR -> Autoupdate + Autoinstall [Binery]}: Automatic installation of murmur with updating support.
+
 # License
 
 You are free to use this script in accords to your need. I don't take credit of this script, and packages that were used in the script goes to respective owners. If you wish to contribute to this code, please feel free to inform me.
