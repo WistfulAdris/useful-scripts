@@ -56,13 +56,13 @@ function prepare_pagespeed ()
 #Prepare to build NAXSI.
 function prepare_naxsi ()
 {
-if [ ! -d naxsi-${NAXSI} ];
-	then
-		rm -rf naxsi-*;
-		wget https://github.com/nbs-system/naxsi/archive/${NAXSI}.tar.gz;
-		tar -xvzf ${NAXSI}.tar.gz;
-		rm ${NAXSI}.tar.gz;
-	fi;
+	if [ ! -d naxsi-${NAXSI} ];
+		then
+			rm -rf naxsi-*;
+			wget https://github.com/nbs-system/naxsi/archive/${NAXSI}.tar.gz;
+			tar -xvzf ${NAXSI}.tar.gz;
+			rm ${NAXSI}.tar.gz;
+		fi;
 }
 
 #Prepare to build NGINX.
