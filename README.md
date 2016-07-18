@@ -14,6 +14,11 @@ Few things to note in mind:
 
 - NNP {NGINX NAXI PAGESPED -> Autoupdate + Autoinstall [Compile]}: Automatic compilation + installation of NGINX with NAXSI & PAGESPEED module with easy updating support.
 - mumble {MURMUR -> Autoupdate + Autoinstall [Binery]}: Automatic installation of murmur with updating support.
+- Windows® Installer Fix {Run sfc /scannow + msiexec /unregister + msiexec /regserver}: Automated Windows® Installer repair for errors such as 1719.
+
+# Disclaimer
+
+Microsoft, Encarta, MSN, and Windows are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.
 
 # License
 
