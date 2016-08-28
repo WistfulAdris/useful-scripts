@@ -3,7 +3,7 @@
 #This is the variables for the build. Make sure to change them before running the script.
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
-PAGESPEED=1.11.33.2
+PAGESPEED=1.11.33.3
 NGINX=1.11.1
 NAXSI=0.54
 COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-release-${PAGESPEED}-beta \
