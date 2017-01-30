@@ -3,10 +3,10 @@
 #This is the variables for the build. Make sure to change them before running the script.
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
-PAGESPEED=1.12.34.2
+PAGESPEED=1.11.33.4
 NGINX=1.11.9
 NAXSI=0.55.1
-COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-release-${PAGESPEED}-beta \
+COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-${PAGESPEED}-beta \
 --add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --without-mail_pop3_module \
 --without-mail_imap_module \
@@ -36,14 +36,14 @@ function folder_check_create ()
 #Preapre to build PAGESPEED.
 function prepare_pagespeed ()
 {
-	if [ ! -d ngx_pagespeed-release-${PAGESPEED}-beta ];
+	if [ ! -d ngx_pagespeed-${PAGESPEED}-beta ];
 		then
-			rm -rf ngx_pagespeed-release-*-beta
-			wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${PAGESPEED}-beta.zip
-			unzip release-${PAGESPEED}-beta.zip
-			rm release-${PAGESPEED}-beta.zip
+			rm -rf ngx_pagespeed-*-beta
+			wget https://github.com/pagespeed/ngx_pagespeed/archive/v${PAGESPEED}-beta.zip
+			unzip v${PAGESPEED}-beta.zip
+			rm v${PAGESPEED}-beta.zip
 
-			cd ngx_pagespeed-release-${PAGESPEED}-beta/
+			cd ngx_pagespeed-${PAGESPEED}-beta/
 			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}.tar.gz
 			tar -xzvf ${PAGESPEED}.tar.gz
 			rm ${PAGESPEED}.tar.gz
