@@ -44,9 +44,9 @@ function prepare_pagespeed ()
 			rm v${PAGESPEED}-beta.zip
 
 			cd ngx_pagespeed-${PAGESPEED}-beta/
-			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}.tar.gz
-			tar -xzvf ${PAGESPEED}.tar.gz
-			rm ${PAGESPEED}.tar.gz
+			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}-x64.tar.gz
+			tar -xzvf ${PAGESPEED}-x64.tar.gz
+			rm ${PAGESPEED}-x64.tar.gz
 		fi
 
 		#Go to install directory
