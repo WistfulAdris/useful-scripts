@@ -14,7 +14,9 @@ COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-${PAGESPEED}-beta \
 --with-http_ssl_module \
 --with-http_v2_module \
 --with-http_stub_status_module \
---with-http_gzip_static_module"
+--with-http_gzip_static_module \
+--with-ngx_http_realip_module"
+JOBS=3 #Adjust to CPU core +1
 
 #Ensure dependencies are PRESENT (Debuan / Ubuntu).
 function dependencies_debian ()
@@ -82,7 +84,7 @@ function compile ()
 {
 	cd ${DIRECTORY}/nginx-${NGINX}
 	./configure ${COMPILE}
-	make;
+	make -j${JOBS};
 	sudo make install
 }
 
