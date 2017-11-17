@@ -3,9 +3,9 @@
 #This is the variables for the build. Make sure to change them before running the script.
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
-PAGESPEED=1.12.34.2
+PAGESPEED=1.13.35.1
 NGINX=1.10.3
-NAXSI=0.55.3
+NAXSI=0.56rc1
 COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-${PAGESPEED}-beta \
 --add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --without-mail_pop3_module \
