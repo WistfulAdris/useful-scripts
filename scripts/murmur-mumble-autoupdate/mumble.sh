@@ -5,8 +5,8 @@ TEMP=/tmp/mumble
 USER=mumble
 DIRECTORY=/home/mumble
 #Do NOT add '/', trailing slash in the end.
-MUMBLE=1.2.16
-MUMBLEOLD=1.2.15
+MUMBLE=1.2.19
+MUMBLEOLD=1.2.18
 
 function first_install()
 {
