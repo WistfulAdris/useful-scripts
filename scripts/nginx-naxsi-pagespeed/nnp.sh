@@ -6,7 +6,7 @@ DIRECTORY=/root/webserver
 PAGESPEED=1.13.35.2
 NGINX=1.13.12
 NAXSI=0.56rc1
-COMPILE="--add-module=${DIRECTORY}/ngx_pagespeed-${PAGESPEED}-beta \
+COMPILE="--add-module=${DIRECTORY}/incubator-pagespeed-ngx-${PAGESPEED}-beta \
 --add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --without-mail_pop3_module \
 --without-mail_imap_module \
@@ -38,14 +38,14 @@ function folder_check_create ()
 #Preapre to build PAGESPEED.
 function prepare_pagespeed ()
 {
-	if [ ! -d ngx_pagespeed-${PAGESPEED}-beta ];
+	if [ ! -d incubator-pagespeed-ngx-${PAGESPEED}-beta ];
 		then
 			rm -rf ngx_pagespeed-*-beta
 			wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${PAGESPEED}-beta.zip
 			unzip v${PAGESPEED}-beta.zip
 			rm v${PAGESPEED}-beta.zip
 
-			cd ngx_pagespeed-${PAGESPEED}-beta/
+			cd incubator-pagespeed-ngx-${PAGESPEED}-beta/
 			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}-x64.tar.gz
 			tar -xzvf ${PAGESPEED}-x64.tar.gz
 			rm ${PAGESPEED}-x64.tar.gz
