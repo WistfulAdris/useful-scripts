@@ -4,7 +4,7 @@
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
 PAGESPEED=1.13.35.2
-NGINX=1.15.7
+NGINX=1.15.12
 NAXSI=0.56
 COMPILE="--add-module=${DIRECTORY}/incubator-pagespeed-ngx-${PAGESPEED}-beta \
 --add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
