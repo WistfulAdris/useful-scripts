@@ -1,4 +1,4 @@
-# NGINX NAXI PAGESPED -> Autoupdate + Autoinstall [Compile]
+# NGINX NAXI PAGESPED: Autoupdate + Autocompile + Autoinstall
 
 This script is intended to automate installation & compilation of nginx, naxsi, and ngx_pagespeed. In addition, it allows you to update nginx, naxsi, and ngx_pagespeed just by changing the variables' version. Usually, the packages' versions listed on the script are up to date. However, it may be good practice to check to ensure that you get the latest version installed.
 
