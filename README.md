@@ -1,4 +1,4 @@
-# Simdol's Useful Scripts
+# Deltoid's Useful Scripts
 
 Instead of performing the tasks day by day, I've decided to program some scripts in bash / shell to lower the workload and spend time more efficiently. Or sometimes, I didn't want to perform same tasks over multiple Linux GNU / nix based systems. These scripts are highly experimental, and I am not responsible for whatever the outcome may be. That said, the scripts uploaded here are tested and used by myself and I only commit to upload the script that works.
 
