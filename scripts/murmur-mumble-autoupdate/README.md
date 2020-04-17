@@ -1,4 +1,4 @@
-# MURMUR -> Autoupdate + Autoinstall [Binery]
+# MURMUR -> Autoupdate + Autoinstall [Binary]
 
 This script is intended to automate installation up upgrade MURMUR, Mumble client for Linux GNU static. Usually, the packages' versions listed on the script are up to date. However, it may be good practice to check to ensure that you get the latest version installed.
 
