@@ -3,7 +3,7 @@
 #This is the variables for the build. Make sure to change them before running the script.
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
-PAGESPEED=1.14.33.1-RC1
+PAGESPEED=1.13.35.2
 NGINX=1.20.1
 NAXSI=1.3
 COMPILE="--add-module=${DIRECTORY}/incubator-pagespeed-ngx-${PAGESPEED}-beta \
@@ -38,15 +38,15 @@ function folder_check_create ()
 #Preapre to build PAGESPEED.
 function prepare_pagespeed ()
 {
-	if [ ! -d incubator-pagespeed-ngx-${PAGESPEED} ];
+	if [ ! -d incubator-pagespeed-ngx-${PAGESPEED}-stable ];
 		then
-			rm -rf ngx_pagespeed-*-beta
-			wget https://github.com/apache/incubator-pagespeed-ngx/archive/refs/tags/v${PAGESPEED}.zip
-			unzip v${PAGESPEED}.zip
-			rm v${PAGESPEED}.zip
+			rm -rf ngx_pagespeed-*-stable
+			wget https://github.com/apache/incubator-pagespeed-ngx/archive/refs/tags/v${PAGESPEED}-stable.zip
+			unzip v${PAGESPEED}-stable.zip
+			rm v${PAGESPEED}-stable.zip
 
-			cd incubator-pagespeed-ngx-${PAGESPEED}/
-			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}.tar.gz
+			cd incubator-pagespeed-ngx-${PAGESPEED}-stable/
+			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}-x64.tar.gz
 			tar -xzvf ${PAGESPEED}.tar.gz
 			rm ${PAGESPEED}.tar.gz
 		fi
