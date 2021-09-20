@@ -41,7 +41,7 @@ function prepare_pagespeed ()
 	if [ ! -d incubator-pagespeed-ngx-${PAGESPEED} ];
 		then
 			rm -rf ngx_pagespeed-*-beta
-			wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${PAGESPEED}.zip
+			wget https://github.com/apache/incubator-pagespeed-ngx/archive/refs/tags/v${PAGESPEED}.zip
 			unzip v${PAGESPEED}.zip
 			rm v${PAGESPEED}.zip
 
