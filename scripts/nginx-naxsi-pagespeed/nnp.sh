@@ -38,17 +38,17 @@ function folder_check_create ()
 #Preapre to build PAGESPEED.
 function prepare_pagespeed ()
 {
-	if [ ! -d incubator-pagespeed-ngx-${PAGESPEED}-beta ];
+	if [ ! -d incubator-pagespeed-ngx-${PAGESPEED} ];
 		then
 			rm -rf ngx_pagespeed-*-beta
-			wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${PAGESPEED}-beta.zip
-			unzip v${PAGESPEED}-beta.zip
-			rm v${PAGESPEED}-beta.zip
+			wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${PAGESPEED}.zip
+			unzip v${PAGESPEED}.zip
+			rm v${PAGESPEED}.zip
 
-			cd incubator-pagespeed-ngx-${PAGESPEED}-beta/
-			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}-x64.tar.gz
-			tar -xzvf ${PAGESPEED}-x64.tar.gz
-			rm ${PAGESPEED}-x64.tar.gz
+			cd incubator-pagespeed-ngx-${PAGESPEED}/
+			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}.tar.gz
+			tar -xzvf ${PAGESPEED}.tar.gz
+			rm ${PAGESPEED}.tar.gz
 		fi
 
 		#Go to install directory
