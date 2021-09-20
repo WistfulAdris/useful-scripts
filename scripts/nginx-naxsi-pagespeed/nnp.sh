@@ -3,7 +3,7 @@
 #This is the variables for the build. Make sure to change them before running the script.
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
-PAGESPEED=1.14.36.1-RC1
+PAGESPEED=v1.14.33.1-RC1
 NGINX=1.20.1
 NAXSI=1.3
 COMPILE="--add-module=${DIRECTORY}/incubator-pagespeed-ngx-${PAGESPEED}-beta \
