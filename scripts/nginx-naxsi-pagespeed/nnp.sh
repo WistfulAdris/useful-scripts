@@ -40,8 +40,9 @@ function prepare_naxsi ()
 		then
 			rm -rf naxsi-*;
    			wget https://github.com/wargio/naxsi/releases/download/${NAXSI}/naxsi-${NAXSI}-src-with-deps.tar.gz;
+      			mkdir naxsi-${NAXSI} && cd naxsi-${NAXSI};
 			tar -xvzf naxsi-${NAXSI}-src-with-deps.tar.gz;
-			rm naxsi-${NAXSI}-src-with-deps.tar.gz;.tar.gz;
+			rm naxsi-${NAXSI}-src-with-deps.tar.gz;
 		fi;
 }
 
