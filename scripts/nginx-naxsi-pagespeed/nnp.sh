@@ -39,10 +39,10 @@ function prepare_naxsi ()
 	if [ ! -d naxsi-${NAXSI} ];
 		then
 			rm -rf naxsi-*;
-   			wget https://github.com/wargio/naxsi/releases/download/${NAXSI}/naxsi-${NAXSI}-src-with-deps.tar.gz;
       			mkdir naxsi-${NAXSI} && cd naxsi-${NAXSI};
+   			wget https://github.com/wargio/naxsi/releases/download/${NAXSI}/naxsi-${NAXSI}-src-with-deps.tar.gz;
 			tar -xvzf naxsi-${NAXSI}-src-with-deps.tar.gz;
-			rm naxsi-${NAXSI}-src-with-deps.tar.gz;
+   			rm naxsi-${NAXSI}-src-with-deps.tar.gz;
    			cd ..
 		fi;
 }
