@@ -20,7 +20,7 @@ JOBS=3 #Adjust to CPU core +1
 function dependencies_debian ()
 {
 	sudo apt-get update
-	sudo apt-get -y install sudo make wget build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev uuid-dev
+	sudo apt-get -y install sudo make wget build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev uuid-dev pkg-config
 }
 
 #Check if directory is present and create if it is not. Next, head to the installation directory.
