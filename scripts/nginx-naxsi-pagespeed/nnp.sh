@@ -43,6 +43,7 @@ function prepare_naxsi ()
       			mkdir naxsi-${NAXSI} && cd naxsi-${NAXSI};
 			tar -xvzf naxsi-${NAXSI}-src-with-deps.tar.gz;
 			rm naxsi-${NAXSI}-src-with-deps.tar.gz;
+   			cd ..
 		fi;
 }
 
