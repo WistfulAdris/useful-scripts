@@ -5,7 +5,7 @@ DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
 NGINX=1.25.3
 NAXSI=1.6
-COMPILE="--add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
+COMPILE="--add-dynamic-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --without-mail_pop3_module \
 --without-mail_imap_module \
 --without-mail_smtp_module \
@@ -39,9 +39,9 @@ function prepare_naxsi ()
 	if [ ! -d naxsi-${NAXSI} ];
 		then
 			rm -rf naxsi-*;
-			wget https://github.com/wargio/naxsi/archive/${NAXSI}.tar.gz;
-			tar -xvzf ${NAXSI}.tar.gz;
-			rm ${NAXSI}.tar.gz;
+   			wget https://github.com/wargio/naxsi/releases/download/${NAXSI}/naxsi-${NAXSI}-src-with-deps.tar.gz;
+			tar -xvzf naxsi-${NAXSI}-src-with-deps.tar.gz;
+			rm naxsi-${NAXSI}-src-with-deps.tar.gz;.tar.gz;
 		fi;
 }
 
