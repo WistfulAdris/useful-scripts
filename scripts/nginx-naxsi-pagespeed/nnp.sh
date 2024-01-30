@@ -3,11 +3,9 @@
 #This is the variables for the build. Make sure to change them before running the script.
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
-PAGESPEED=1.13.35.2
-NGINX=1.20.1
-NAXSI=1.3
-COMPILE="--add-module=${DIRECTORY}/incubator-pagespeed-ngx-${PAGESPEED}-beta \
---add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
+NGINX=1.25.3
+NAXSI=1.6
+COMPILE="--add-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --without-mail_pop3_module \
 --without-mail_imap_module \
 --without-mail_smtp_module \
@@ -35,33 +33,13 @@ function folder_check_create ()
 	cd ${DIRECTORY}
 }
 
-#Preapre to build PAGESPEED.
-function prepare_pagespeed ()
-{
-	if [ ! -d incubator-pagespeed-ngx-${PAGESPEED}-stable ];
-		then
-			rm -rf ngx_pagespeed-*-stable
-			wget https://github.com/apache/incubator-pagespeed-ngx/archive/refs/tags/v${PAGESPEED}-stable.zip
-			unzip v${PAGESPEED}-stable.zip
-			rm v${PAGESPEED}-stable.zip
-
-			cd incubator-pagespeed-ngx-${PAGESPEED}-stable/
-			wget https://dl.google.com/dl/page-speed/psol/${PAGESPEED}-x64.tar.gz
-			tar -xzvf ${PAGESPEED}.tar.gz
-			rm ${PAGESPEED}.tar.gz
-		fi
-
-		#Go to install directory
-		cd ${DIRECTORY}
-	}
-
 #Prepare to build NAXSI.
 function prepare_naxsi ()
 {
 	if [ ! -d naxsi-${NAXSI} ];
 		then
 			rm -rf naxsi-*;
-			wget https://github.com/nbs-system/naxsi/archive/${NAXSI}.tar.gz;
+			wget https://github.com/wargio/naxsi/archive/${NAXSI}.tar.gz;
 			tar -xvzf ${NAXSI}.tar.gz;
 			rm ${NAXSI}.tar.gz;
 		fi;
@@ -96,8 +74,6 @@ function compile ()
 dependencies_debian
 #Create install folder, specified in DIRECTORY variable and enter the folder.
 folder_check_create
-#Download, unpack NGX_PAGESPEED.
-prepare_pagespeed
 #Download, unpack NAXSI_SRC.
 prepare_naxsi
 #Download, unpack NGINX.
