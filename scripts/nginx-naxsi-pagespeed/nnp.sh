@@ -13,7 +13,8 @@ COMPILE="--add-dynamic-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --with-http_v2_module \
 --with-http_stub_status_module \
 --with-http_gzip_static_module \
---with-http_realip_module"
+--with-http_realip_module \
+--with-stream"
 JOBS=3 #Adjust to CPU core +1
 
 #Ensure dependencies are PRESENT (Debuan / Ubuntu).
