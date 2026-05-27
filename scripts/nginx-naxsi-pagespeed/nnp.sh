@@ -3,7 +3,7 @@
 #This is the variables for the build. Make sure to change them before running the script.
 DIRECTORY=/root/webserver
 #Do NOT add '/', trailing slash in the end.
-NGINX=1.28.0
+NGINX=1.30.2
 NAXSI=1.7
 COMPILE="--add-dynamic-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --without-mail_pop3_module \
@@ -11,10 +11,12 @@ COMPILE="--add-dynamic-module=${DIRECTORY}/naxsi-${NAXSI}/naxsi_src \
 --without-mail_smtp_module \
 --with-http_ssl_module \
 --with-http_v2_module \
+--with-http_v3_module \
 --with-http_stub_status_module \
 --with-http_gzip_static_module \
 --with-http_realip_module \
---with-stream"
+--with-stream \
+--with-threads"
 JOBS=3 #Adjust to CPU core +1
 
 #Ensure dependencies are PRESENT (Debuan / Ubuntu).
